@@ -1,10 +1,34 @@
 {
-    "grimoirelab": {
-      "meta": {
-        "title": "GrimoireLab"
-      },
-      "git": [
-          "https://github.com/chaoss/grimoirelab.git"
+    "data-safe-haven": {
+        "meta": {
+            "title": "data-safe-haven"
+        },
+        "git": [
+            "https://github.com/alan-turing-institute/data-safe-haven"
+        ],
+        "github": [
+            "https://github.com/alan-turing-institute/data-safe-haven"
         ]
+    },
+    "Turing-RSS-Health-Data-Lab-Biomedical-Acoustic-Markers": {
+        "meta": {
+            "title": "Turing-RSS-Health-Data-Lab-Biomedical-Acoustic-Markers"
+        },
+        "git": [
+            "https://github.com/alan-turing-institute/Turing-RSS-Health-Data-Lab-Biomedical-Acoustic-Markers"
+        ],
+        "github": [
+            "https://github.com/alan-turing-institute/Turing-RSS-Health-Data-Lab-Biomedical-Acoustic-Markers"
+        ]
+    },
+    "rctab-api": {
+        "meta": {
+            "title": "rctab-api"
+        },
+        "git": [
+            "https://github.com/alan-turing-institute/rctab-api"
+        ],
+        "github": [
+            "https://github.com/alan-turing-institute/rctab-api"
     }
-  }
+}
