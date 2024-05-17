@@ -11,6 +11,8 @@ services:
       healthcheck:
         test: [ "CMD", "/usr/local/bin/healthcheck.sh", "--su=root", "--connect", "--innodb_initialized" ]
         retries: 5
+      volumes:
+        - grimoirelab-mariadb:/var/lib/mysql:Z
 
     redis:
       image: redis:latest
@@ -19,6 +21,8 @@ services:
       healthcheck:
         test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
         retries: 5
+      volumes:
+        - grimoirelab-redis:/data
 
     elasticsearch:
       image: bitergia/elasticsearch:6.8.6-secured
@@ -27,6 +31,8 @@ services:
         - 9200:9200
       environment:
         - ES_JAVA_OPTS=-Xms2g -Xmx2g
+      volumes:
+        - grimoirelab-elasticsearch:/usr/share/elasticsearch/data
 
     kibiter:
       restart: on-failure:5
@@ -117,3 +123,6 @@ services:
 
 volumes:
   sortinghat-static:
+  grimoirelab-elasticsearch:
+  grimoirelab-mariadb:
+  grimoirelab-redis:

@@ -11,6 +11,8 @@ services:
       healthcheck:
         test: [ "CMD", "/usr/local/bin/healthcheck.sh", "--su=root", "--connect", "--innodb_initialized" ]
         retries: 5
+      volumes:
+        - grimoirelab-mariadb:/var/lib/mysql:Z
 
     redis:
       image: redis:latest
@@ -19,6 +21,8 @@ services:
       healthcheck:
         test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
         retries: 5
+      volumes:
+        - grimoirelab-redis:/data
 
     opensearch-node1:
       image: opensearchproject/opensearch:1.3.7
@@ -36,6 +40,8 @@ services:
         nofile:
           soft: 65536 # maximum number of open files for the OpenSearch user, set to at least 65536 on modern systems
           hard: 65536
+      volumes:
+        - grimoirelab-opensearch:/usr/share/opensearch/data
       ports:
         - 9200:9200
         - 9600:9600 # required for Performance Analyzer
@@ -124,3 +130,6 @@ services:
 
 volumes:
   sortinghat-static:
+  grimoirelab-opensearch:
+  grimoirelab-mariadb:
+  grimoirelab-redis:
