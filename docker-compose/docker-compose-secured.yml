@@ -32,7 +32,7 @@ services:
       environment:
         - ES_JAVA_OPTS=-Xms2g -Xmx2g
       volumes:
-        - grimoirelab-elasticsearch:/usr/share/elasticsearch/data
+        - grimoirelab-elasticsearch:/elasticsearch/data
 
     kibiter:
       restart: on-failure:5
